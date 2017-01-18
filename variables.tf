@@ -3,7 +3,7 @@ variable "access_key" {}
 variable "secret_key" {}
 
 variable "region" {
-  default = "us-east-1"
+  default = "eu-west-1"
 }
 
 variable "platform" {
@@ -26,14 +26,24 @@ variable "public_subnet_cidr_secondary" {
   default     = "10.0.1.0/24"
 }
 
+variable "public_subnet_cidr_tertiary" {
+  description = "CIDR for private subnet"
+  default     = "10.0.2.0/24"
+}
+
 variable "private_subnet_cidr_primary" {
   description = "CIDR for public subnet"
-  default     = "10.0.2.0/24"
+  default     = "10.0.10.0/24"
 }
 
 variable "private_subnet_cidr_secondary" {
   description = "CIDR for private subnet"
-  default     = "10.0.3.0/24"
+  default     = "10.0.11.0/24"
+}
+
+variable "private_subnet_cidr_tertiary" {
+  description = "CIDR for private subnet"
+  default     = "10.0.12.0/24"
 }
 
 variable "ami" {

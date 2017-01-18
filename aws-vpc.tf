@@ -31,3 +31,5 @@ resource "aws_route_table" "private" {
     instance_id = "${aws_instance.nat.id}"
   }
 }
+
+data "aws_availability_zones" "available" {}
