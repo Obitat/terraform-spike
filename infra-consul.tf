@@ -7,7 +7,7 @@ variable "consul_service_conf_dest" {
 }
 
 variable "consul_servers" {
-  default = "3"
+  default = "0"
 
   description = "The number of Consul servers to launch."
 }
@@ -68,5 +68,5 @@ resource "aws_instance" "consul_server" {
 }
 
 output "infra_consul_servers" {
-  value = ["${aws_instance.consul_server.*.private_ip}"]
+  value = "${join(",", aws_instance.consul_server.*.private_ip)}"
 }
